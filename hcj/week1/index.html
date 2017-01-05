@@ -9,6 +9,29 @@
     <meta name="keywords" content="">
     <link href="" rel="stylesheet">
     <script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+    <style type="text/css">
+    fieldset {
+    	background-color: lightyellow;
+    	border: 10px solid yellow;
+    	margin-bottom: 10px;
+    	width: 720px;
+    }
+    label {
+    	width: 180px;
+    	display: inline-block;
+    	text-align: right top;
+    }
+    .autowidth {
+    	width: auto;
+    }
+    span {
+    	text-align: center;
+    }
+    textarea {
+    	width: 360px;
+    	height: 50px;
+    }
+    </style>
 </head>
 
 <body>
@@ -32,9 +55,9 @@
             <br>
             <label for="gender">Gender:</label>
             <input type="radio" id="male" name="Gender" value="Male" required="required">
-            <label for="male">Male</label>
+            <label for="male" class="autowidth">Male</label>
             <input type="radio" id="female" name="Gender" value="Female" required="required">
-            <label for="female">Female</label>
+            <label for="female" class="autowidth">Female</label>
             <br>
             <br>
             <label for="age">Age:</label>
@@ -63,8 +86,8 @@
         <fieldset>
             <legend>Your indicators</legend>
             <label for="height">Height:</label>
-            Short
-            <input type="range" id="height" name="height" min="0" max="100">Tall
+            <span>Short</span>
+            <input type="range" id="height" name="height" min="0" max="100"><span>Tall</span>
             <br>
             <label for="salary">Salary:</label>
             Poor
@@ -77,21 +100,21 @@
             <input type="email" id="email" name="email" required="required">
             <br>
             <br>
-			<label for="tel">Mobile:</label>
-			<input type="tel" id="tel" name="tel">
-			<br>
-			<br>
-			<label for="address">Address:</label>
-			<input type="textarea" id="address" name="address" >
-			<br>
-			<br>
-			<label>Method to contact you:</label>
-			<input type="checkbox" id="contactemail" name="contactmethod" value="email">
-			<label for="contactemail">Email</label>
-			<input type="checkbox" id="contactewhatsapp" name="contactmethod" value="whatsapp">
-			<label for="contactewhatsapp">Whatsapp</label>
-			<input type="checkbox" id="contactinapp" name="contactmethod" value="inapp">
-			<label for="contactinapp">In-app chat</label>
+            <label for="tel">Mobile:</label>
+            <input type="tel" id="tel" name="tel">
+            <br>
+            <br>
+            <label for="address">Address:</label>
+            <input type="textarea" id="address" name="address">
+            <br>
+            <br>
+            <label>Method to contact you:</label>
+            <input type="checkbox" id="contactemail" name="contactmethod" value="email">
+            <label for="contactemail" class="autowidth">Email</label>
+            <input type="checkbox" id="contactewhatsapp" name="contactmethod" value="whatsapp">
+            <label for="contactewhatsapp" class="autowidth">Whatsapp</label>
+            <input type="checkbox" id="contactinapp" name="contactmethod" value="inapp">
+            <label for="contactinapp" class="autowidth">In-app chat</label>
         </fieldset>
         <br>
         <input type="submit" name="submit">
