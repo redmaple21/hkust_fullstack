@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Guess Color</title>
+    <script type="text/javascript">
+    var target;
+    var guess_input_text;
+    var finished = false;
+    var guesses = 0;
+    var colors = [
+        "aqua",
+        "black",
+        "blue",
+        "cyan",
+        "gold",
+        "gray",
+        "green",
+        "magenta",
+        "orange",
+        "red",
+        "white",
+        "yellow"
+    ];
+
+    function do_game() {
+        var random_number = Math.random() * (colors.length - 1);
+        var random_number_integer = Math.floor(random_number);
+        target = colors[random_number_integer];
+        console.log("target color is " + target);
+
+        while (!finished) {
+            guess_input_text = prompt("I am thinking of these colors:\n " +
+                colors +
+                " What color am i thinking of ?");
+            guesses++;
+            finished = check_guess();
+        }
+
+        function check_guess() {
+        	if (colors.indexOf(guess_input_text) < 0) {
+        		alert("Sorry, I don't recognize your color.\n"+
+        			"Please try again.");
+        		return false;
+        	}
+        	if (guess_input_text > target) {
+        		alert("Sorry, your guess is not correct!\n"+
+        			"Hint:your corlor is alphabetically higher than mine.\n"+
+        			"Please try again.");
+        		return false;
+        	} else if (guess_input_text < target) {
+        		alert("Sorry, your guess is not correct!\n"+
+        			"Hint:your corlor is alphabetically lower than mine.\n"+
+        			"Please try again.");
+        		return false;
+        	} 
+        	alert("Congratulations!You have guessed the color!\n"+
+        		"It took you "+guesses+" guesses to finish the game!\n"+
+        		"You can see the color in the background");
+        	return true;
+        }
+
+        var myBody = document.getElementsByTagName("body")[0];
+        myBody.style.background = target;
+    }
+    </script>
+</head>
+
+<body onload="do_game()">
+</body>
+
+</html>
