@@ -8,17 +8,22 @@
     <style>
     img {
         position: absolute;
+        width: 100px;
+        height: 100px;
     }
+    
     div {
-    	position: absolute;
-    	width: 800px;
-    	height: 600px;
+        position: absolute;
+        width: 800px;
+        height: 600px;
     }
+    
     #rightside {
-    	left: 800px;
-    	border-left: 1px solid black;
+        left: 800px;
+        border-left: 1px solid black;
     }
     </style>
+
 </head>
 
 <body>
@@ -27,5 +32,19 @@
     <div id="leftside"></div>
     <div id="rightside"></div>
 </body>
+    <script type="text/javascript">
+    var numberOfFaces = 5;
+    var theLeftSide = document.getElementById("leftside");
 
+    function generateFaces() {
+        for (var i = 0; i < numberOfFaces; i++) {
+            var this_img = document.createElement("img");
+            this_img.src = "smile.png";
+            this_img.style.left = Math.floor(Math.random() * 700) + "px";
+            this_img.style.top = Math.floor(Math.random() * 500) + "px";
+            theLeftSide.appendChild(this_img);
+        }
+    }
+    generateFaces();
+    </script>
 </html>
