@@ -23,7 +23,6 @@
         border-left: 1px solid black;
     }
     </style>
-
 </head>
 
 <body>
@@ -32,19 +31,30 @@
     <div id="leftside"></div>
     <div id="rightside"></div>
 </body>
-    <script type="text/javascript">
-    var numberOfFaces = 5;
-    var theLeftSide = document.getElementById("leftside");
+<script type="text/javascript">
+var numberOfFaces = 5;
+var theLeftSide = document.getElementById("leftside");
 
-    function generateFaces() {
-        for (var i = 0; i < numberOfFaces; i++) {
-            var this_img = document.createElement("img");
-            this_img.src = "smile.png";
-            this_img.style.left = Math.floor(Math.random() * 700) + "px";
-            this_img.style.top = Math.floor(Math.random() * 500) + "px";
-            theLeftSide.appendChild(this_img);
-        }
+function generateFaces() {
+    for (var i = 0; i < numberOfFaces; i++) {
+        var this_img = document.createElement("img");
+        this_img.src = "smile.png";
+        this_img.style.left = Math.floor(Math.random() * 700) + "px";
+        this_img.style.top = Math.floor(Math.random() * 500) + "px";
+        theLeftSide.appendChild(this_img);
     }
-    generateFaces();
-    </script>
+}
+generateFaces();
+var theRightSide =
+    document.getElementById("rightside");
+var leftSideImages = theLeftSide.cloneNode(true);
+theLeftSide.removeChild(theLeftSide.lastChild);
+theRightSide.appendChild(leftSideImages);
+// while (leftSideImages.firstChild) {
+//     theRightSide.appendChild(leftSideImages.firstChild);    
+// }
+
+
+</script>
+
 </html>
