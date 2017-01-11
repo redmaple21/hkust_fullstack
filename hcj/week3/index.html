@@ -34,6 +34,9 @@
 <script type="text/javascript">
 var numberOfFaces = 5;
 var theLeftSide = document.getElementById("leftside");
+var theBody = document.getElementsByTagName("body")[0];
+var theRightSide =
+    document.getElementById("rightside");
 
 function generateFaces() {
     for (var i = 0; i < numberOfFaces; i++) {
@@ -43,18 +46,30 @@ function generateFaces() {
         this_img.style.top = Math.floor(Math.random() * 500) + "px";
         theLeftSide.appendChild(this_img);
     }
+
+    var leftSideImages = theLeftSide.cloneNode(true);
+    theLeftSide.lastChild.onclick = function nextLevel(event) {
+        event.stopPropagation();
+        while(theLeftSide.firstChild){
+        	theLeftSide.removeChild(theLeftSide.firstChild);
+        }
+                event.stopPropagation();
+        while(theRightSide.firstChild){
+        	theRightSide.removeChild(theRightSide.firstChild);
+        }
+        numberOfFaces += 5;
+        generateFaces();
+    }
+    leftSideImages.removeChild(leftSideImages.lastChild);
+    theRightSide.appendChild(leftSideImages);
+    theBody.onclick = function gameOver(){
+    	alert("Game Over!");
+    	theBody.onclick = null;
+    	theLeftSide.lastChild.onclick = null;
+    	window.location.reload();
+    }
 }
 generateFaces();
-var theRightSide =
-    document.getElementById("rightside");
-var leftSideImages = theLeftSide.cloneNode(true);
-theLeftSide.removeChild(theLeftSide.lastChild);
-theRightSide.appendChild(leftSideImages);
-// while (leftSideImages.firstChild) {
-//     theRightSide.appendChild(leftSideImages.firstChild);    
-// }
-
-
 </script>
 
 </html>
