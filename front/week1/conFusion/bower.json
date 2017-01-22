@@ -1,0 +1,26 @@
+{
+  "name": "conFusion",
+  "version": "1.0.0",
+  "homepage": "https://github.com/redmaple21/hkust_fullstack",
+  "authors": [
+    "redmaple21 <redmaple21@gmail.com>"
+  ],
+  "description": "Website for studying",
+  "main": "index.html",
+  "keywords": [
+    "conFusion",
+    "coursera"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
+}
